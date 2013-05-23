@@ -352,6 +352,7 @@ inoremap <Esc>C <right>
 inoremap <Esc>D <left>
 
 map <C-t> :CtrlP<CR>
+map <F8> :NERDTree<CR>
 
 "http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
