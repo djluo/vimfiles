@@ -179,8 +179,9 @@ set expandtab
 set autoindent
 
 "folding settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
+set foldmethod=syntax   "fold based on indent
+set foldnestmax=10
+set foldlevel=20
 set nofoldenable        "dont fold by default
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
