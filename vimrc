@@ -378,3 +378,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git)$',
   \ 'file': '\v\.(log|jpg|png|jpeg)$',
   \ }
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtBS()': ['<bs>', '<c-h>'],
+  \ 'PrtCurLeft()': ['<left>'],
+  \ }
