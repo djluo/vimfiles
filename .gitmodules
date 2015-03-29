@@ -49,3 +49,6 @@
 [submodule "bundle/vim-bind"]
 	path = bundle/vim-bind
 	url = git@github.com:Absolight/vim-bind.git
+[submodule "bundle/vim-nginx"]
+	path = bundle/vim-nginx
+	url = git@github.com:evanmiller/nginx-vim-syntax.git
