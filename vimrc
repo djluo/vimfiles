@@ -356,6 +356,7 @@ inoremap <Esc>C <right>
 inoremap <Esc>D <left>
 
 map <C-t> :CtrlP<CR>
+map <F7> :TagbarToggle<CR>
 map <F8> :NERDTree<CR>
 
 "http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
