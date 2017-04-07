@@ -385,3 +385,23 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtBS()': ['<bs>', '<c-h>'],
   \ 'PrtCurLeft()': ['<left>'],
   \ }
+
+" Auto add head info
+" .py file into add header
+function HeaderPython()
+    call setline(1, '#!/usr/bin/env python')
+    call append(1, '# vim:set et ts=4 sw=4 fileencoding=utf-8:')
+    normal G
+    normal o
+endf
+autocmd bufnewfile *.py call HeaderPython()
+
+" Auto add head info
+" .sh file into add header
+function HeaderBash()
+    call setline(1, '#!/usr/bin/env bash')
+    call append(1, '# vim:set et ts=4 sw=4:')
+    normal G
+    normal o
+endf
+autocmd bufnewfile *.sh call HeaderBash()
