@@ -22,9 +22,6 @@
 [submodule "bundle/git-vim"]
 	path = bundle/git-vim
 	url = git://github.com/motemen/git-vim.git
-[submodule "bundle/ctrp"]
-	path = bundle/ctrp
-	url = git://github.com/kien/ctrlp.vim.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
