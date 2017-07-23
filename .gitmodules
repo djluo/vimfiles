@@ -52,3 +52,6 @@
 [submodule "bundle/tabbar"]
 	path = bundle/tabbar
 	url = git@github.com:majutsushi/tagbar.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
