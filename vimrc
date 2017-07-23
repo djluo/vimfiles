@@ -56,6 +56,8 @@ set statusline=%f       "tail of the filename
 
 "Git
 set statusline+=%{fugitive#statusline()}
+" ALE
+set statusline+=\ %{ALEGetStatusLine()}
 
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
@@ -189,6 +191,7 @@ set nofoldenable        "dont fold by default
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*/venv/*
 
 "display tabs and trailing spaces
 "set list
@@ -216,10 +219,8 @@ set hidden
 " else in your ~/.vimrc file, such as:
 " nmap <silent> <Leader>q <Plug>PeepOpen
 
-silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
-
 "make <c-l> clear the highlight as well as redraw
-nnoremap <C-L> :nohls<CR><C-L>
+nnoremap <C-L> :nohls<CR>
 inoremap <C-L> <C-O>:nohls<CR>
 
 "map to bufexplorer
@@ -300,27 +301,14 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-"key mapping for window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-map ZZ :w<CR>
-
-"key mapping for saving file
-nmap <C-s> :w<CR>
-
-"key mapping for tab navigation
-nmap <Tab> gt
-nmap <S-Tab> gT
+" 保存
+nmap ZZ :w<CR>
 
 "Key mapping for textmate-like indentation
 nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
-
-let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
 
 "Enabling Zencoding
 let g:user_zen_settings = {
@@ -343,23 +331,38 @@ let g:user_zen_settings = {
 imap {<CR> {}<ESC>i<CR><ESC>O
 
 " NERDTree settings
-nmap wm :NERDTree<cr>
+nmap wm :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.swp$']
 
-nnoremap <Esc>A <up>
-nnoremap <Esc>B <down>
-nnoremap <Esc>C <right>
-nnoremap <Esc>D <left>
-inoremap <Esc>A <up>
-inoremap <Esc>B <down>
-inoremap <Esc>C <right>
-inoremap <Esc>D <left>
+" Tagbar
+nmap ta :TagbarToggle<CR>
 
-map <C-t> :CtrlP<CR>
-map <F7> :TagbarToggle<CR>
-map <F8> :NERDTree<CR>
+" ctrlp
+let g:ctrlp_map = ',,'
+let g:ctrlp_open_multiple_files = 'v'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git)$',
+  \ 'file': '\v\.(log|jpg|png|jpeg)$',
+  \ }
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtBS()': ['<bs>', '<c-h>'],
+  \ 'PrtCurLeft()': ['<left>'],
+  \ }
+
+" ale
+let g:ale_sign_column_always = 1
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+"普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
+nmap sp <Plug>(ale_previous_wrap)
+nmap sn <Plug>(ale_next_wrap)
+"<Leader>s触发/关闭语法检查
+nmap ale :ALEToggle<CR>
+"<Leader>d查看错误或警告的详细信息
+"nmap <Leader>d :ALEDetail<CR>
 
 "http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+" :Tab /|
+" :Tab /=
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
@@ -373,23 +376,11 @@ function! s:align()
   endif
 endfunction
 
-let g:ctrlp_map = ',,'
-let g:ctrlp_open_multiple_files = 'v'
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git)$',
-  \ 'file': '\v\.(log|jpg|png|jpeg)$',
-  \ }
-let g:ctrlp_prompt_mappings = {
-  \ 'PrtBS()': ['<bs>', '<c-h>'],
-  \ 'PrtCurLeft()': ['<left>'],
-  \ }
-
 " Auto add head info
 " .py file into add header
 function HeaderPython()
     call setline(1, '#!/usr/bin/env python')
+    call append(1, '# @Author: djluo')
     call append(1, '# vim:set et ts=4 sw=4 fileencoding=utf-8:')
     normal G
     normal o
@@ -401,7 +392,27 @@ autocmd bufnewfile *.py call HeaderPython()
 function HeaderBash()
     call setline(1, '#!/usr/bin/env bash')
     call append(1, '# vim:set et ts=4 sw=4:')
+    call append(2, '# @Author: djluo')
     normal G
     normal o
 endf
 autocmd bufnewfile *.sh call HeaderBash()
+
+let mapleader = "\<Space>"
+" 查看变化
+map <leader>d :Git diff<CR>
+" 将当前文件加入暂存区(git add xxx)
+map <leader>w :Gwrite<CR>
+
+"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"python with virtualenv support
+"py << EOF
+"import os.path
+"import sys
+"import vim
+"if 'VIRTUA_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  sys.path.insert(0, project_base_dir)
+"  activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
