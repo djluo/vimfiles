@@ -350,13 +350,14 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " ale
-let g:ale_sign_column_always = 1
+nmap ale :ALEToggle<CR>
+"let g:ale_sign_column_always = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
 let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
 "普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
 nmap sp <Plug>(ale_previous_wrap)
 nmap sn <Plug>(ale_next_wrap)
-"<Leader>s触发/关闭语法检查
-nmap ale :ALEToggle<CR>
 "<Leader>d查看错误或警告的详细信息
 "nmap <Leader>d :ALEDetail<CR>
 
@@ -399,10 +400,12 @@ endf
 autocmd bufnewfile *.sh call HeaderBash()
 
 let mapleader = "\<Space>"
-" 查看变化
-map <leader>d :Git diff<CR>
+
 " 将当前文件加入暂存区(git add xxx)
-map <leader>w :Gwrite<CR>
+nmap <leader>w :Gwrite<CR>
+nmap gst :Gstatus<CR>
+nmap gdi :Git diff<CR>
+nmap gdc :Git diff --cached<CR>
 
 "map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "python with virtualenv support
