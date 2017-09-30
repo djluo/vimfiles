@@ -191,7 +191,7 @@ set nofoldenable        "dont fold by default
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*/venv/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gitkeep,*/venv/*,*/develop/*
 
 "display tabs and trailing spaces
 "set list
@@ -332,16 +332,20 @@ imap {<CR> {}<ESC>i<CR><ESC>O
 
 " NERDTree settings
 nmap wm :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.swp$']
+let NERDTreeIgnore=['\.swp$', '\.egg-info', '\.pyc$']
+:let g:NERDTreeWinSize=20
 
 " Tagbar
 nmap ta :TagbarToggle<CR>
+
+"
+set completeopt-=preview
 
 " ctrlp
 let g:ctrlp_map = ',,'
 let g:ctrlp_open_multiple_files = 'v'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git)$',
+  \ 'dir':  '\v[\/](\.git|develop|build)$',
   \ 'file': '\v\.(log|jpg|png|jpeg)$',
   \ }
 let g:ctrlp_prompt_mappings = {
@@ -350,7 +354,7 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " ale
-nmap ale :ALEToggle<CR>
+"nmap ale :ALEToggle<CR>
 "let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
