@@ -1,0 +1,7 @@
+brew install tcl-tk
+brew install python3 --with-tcl-tk
+brew install vim --with-python@2
+cd ~/.vim/bundle/YouCompleteMe && python2 ./install.py --clang-completer
+pip3 install flake8
+
+NERDTree 使用ma指令创建文件或目录

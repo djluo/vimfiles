@@ -403,6 +403,8 @@ function HeaderBash()
 endf
 autocmd bufnewfile *.sh call HeaderBash()
 
+autocmd BufNewFile,BufRead *.jinja set syntax=jinja
+
 let mapleader = "\<Space>"
 
 " 将当前文件加入暂存区(git add xxx)

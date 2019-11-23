@@ -64,3 +64,6 @@
 [submodule "bundle/asyncrun"]
 	path = bundle/asyncrun
 	url = git@github.com:skywind3000/asyncrun.vim.git
+[submodule "bundle/Jenkinsfile"]
+	path = bundle/Jenkinsfile
+	url = git@github.com:martinda/Jenkinsfile-vim-syntax.git
