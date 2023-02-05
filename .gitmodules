@@ -61,3 +61,6 @@
 [submodule "bundle/Jenkinsfile"]
 	path = bundle/Jenkinsfile
 	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git

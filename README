@@ -5,3 +5,8 @@ cd ~/.vim/bundle/YouCompleteMe && python2 ./install.py --clang-completer
 pip3 install flake8
 
 NERDTree 使用ma指令创建文件或目录
+
+
+统一更新插件: git submodule update --remote
+添加新插件: git submodule add https://github.com/hashivim/vim-terraform.git ./bundle/vim-terraform
+
