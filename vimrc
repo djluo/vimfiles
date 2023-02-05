@@ -418,6 +418,15 @@ function HeaderBash()
 endf
 autocmd bufnewfile *.sh call HeaderBash()
 
+" Auto add head info
+" .pp file into add header
+function HeaderPuppet()
+    call setline(1, '/* vim:set et ts=4 sw=4 syntax=puppet: */')
+    normal G
+    normal o
+endf
+autocmd bufnewfile *.pp call HeaderPuppet()
+
 autocmd BufNewFile,BufRead *.jinja set syntax=jinja
 
 let mapleader = "\<Space>"
