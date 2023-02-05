@@ -1,63 +1,63 @@
 [submodule "vim-pathogen"]
 	path = vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
+	url = https://github.com/tpope/vim-pathogen.git
 [submodule "bundle/NERD_tree"]
 	path = bundle/NERD_tree
-	url = git://github.com/scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/markdown"]
 	path = bundle/markdown
-	url = git://github.com/tpope/vim-markdown.git
+	url = https://github.com/tpope/vim-markdown.git
 [submodule "bundle/git"]
 	path = bundle/git
-	url = git://github.com/tpope/vim-git.git
+	url = https://github.com/tpope/vim-git.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = git://github.com/ervandew/supertab.git
+	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/vim-preview"]
 	path = bundle/vim-preview
-	url = git://github.com/greyblake/vim-preview.git
+	url = https://github.com/greyblake/vim-preview.git
 [submodule "bundle/git-vim"]
 	path = bundle/git-vim
-	url = git://github.com/motemen/git-vim.git
+	url = https://github.com/motemen/git-vim.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
-	url = git://github.com/tpope/vim-rails.git
+	url = https://github.com/tpope/vim-rails.git
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
-	url = git://github.com/tomtom/tlib_vim.git
+	url = https://github.com/tomtom/tlib_vim.git
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
-	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "bundle/puppet"]
 	path = bundle/puppet
-	url = git://github.com/rodjek/vim-puppet.git
+	url = https://github.com/rodjek/vim-puppet.git
 [submodule "bundle/vim-bind"]
 	path = bundle/vim-bind
-	url = git@github.com:Absolight/vim-bind.git
+	url = https://github.com/Absolight/vim-bind.git
 [submodule "bundle/vim-nginx"]
 	path = bundle/vim-nginx
-	url = git@github.com:fbernier/nginx-vim-syntax.git
+	url = https://github.com/fbernier/nginx-vim-syntax.git
 [submodule "bundle/tabbar"]
 	path = bundle/tabbar
-	url = git@github.com:majutsushi/tagbar.git
+	url = https://github.com/majutsushi/tagbar.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe.git
+	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/ale"]
 	path = bundle/ale
-	url = git@github.com:w0rp/ale.git
+	url = https://github.com/w0rp/ale.git
 [submodule "bundle/asyncrun"]
 	path = bundle/asyncrun
-	url = git@github.com:skywind3000/asyncrun.vim.git
+	url = https://github.com/skywind3000/asyncrun.vim.git
 [submodule "bundle/Jenkinsfile"]
 	path = bundle/Jenkinsfile
-	url = git@github.com:martinda/Jenkinsfile-vim-syntax.git
+	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
