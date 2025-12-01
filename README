@@ -5,4 +5,4 @@
 开发效率：YouCompleteMe（补全）、ale（语法检查）、asyncrun（异步任务）。
 文件管理：NERD_tree（文件树）、ctrlp（模糊搜索）。
 版本控制：fugitive（Git 集成）。
-界面增强：tabbar（标签页栏）、tabular（文本对齐）
+界面增强：tagbar（代码结构）、tabular（文本对齐）

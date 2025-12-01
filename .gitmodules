@@ -43,8 +43,8 @@
 [submodule "bundle/vim-nginx"]
 	path = bundle/vim-nginx
 	url = https://github.com/fbernier/nginx-vim-syntax.git
-[submodule "bundle/tabbar"]
-	path = bundle/tabbar
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
